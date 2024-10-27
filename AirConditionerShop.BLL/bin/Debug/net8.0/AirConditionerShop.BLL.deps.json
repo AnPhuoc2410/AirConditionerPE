@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "AirConditionerShop.BLL/1.0.0": {
+        "dependencies": {
+          "AirConditionerShop.DAL": "1.0.0"
+        },
+        "runtime": {
+          "AirConditionerShop.BLL.dll": {}
+        }
+      },
+      "AirConditionerShop.DAL/1.0.0": {
+        "runtime": {
+          "AirConditionerShop.DAL.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AirConditionerShop.BLL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AirConditionerShop.DAL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
