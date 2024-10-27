@@ -5,9 +5,72 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AirConditionerShop_AnPhuocDao"
         mc:Ignorable="d"
-        Title="MainWindow" Height= "330" Width= "600" FontFamily= "Arial" FontSize= "14" Background= "#FFD4F7D4" WindowStartupLocation= "CenterScreen"
->
+            Title="Thế Giới Điện Tử Xứ F - ver.24-SU" Height="685" Width="1265" 
+    Background="{StaticResource PrimaryBackgroundBrush}" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Grid>
+        <!-- Title Label -->
+        <Label Content="Thế Giới Đỏ Đen" HorizontalAlignment="Left" Height="80" Margin="31,20,0,0"
+           VerticalAlignment="Top" Width="569" FontWeight="Bold" FontSize="50" FontStyle="Italic"
+           Foreground="{StaticResource AccentRedBrush}"/>
 
+        <!-- Version Label -->
+        <Label Content="ver. 24-SU" HorizontalAlignment="Left" Height="50" Margin="598,40,0,0" 
+           VerticalAlignment="Top" Width="275" FontSize="30" Foreground="{StaticResource AccentRedBrush}" FontStyle="Italic"/>
+
+        <!-- Hello Message -->
+        <Label x:Name="HelloMsgLabel" Content="Hello, Phuoc" HorizontalAlignment="Right" Height="50"
+           Margin="0,6,30,0" VerticalAlignment="Top" Width="315" FontSize="25" FontStyle="Italic" 
+           Foreground="{StaticResource AccentRedBrush}" HorizontalContentAlignment="Right"/>
+
+        <!-- Highlight Rectangle -->
+        <Rectangle HorizontalAlignment="Left" Height="95" Margin="39,140,0,0" Stroke="#000000"
+               VerticalAlignment="Top" Width="1171" Fill="{StaticResource AccentRedBrush}" RadiusX="10" RadiusY="10"/>
+
+        <!-- Search Button -->
+        <Button x:Name="SearchButton" Content="Search Air Conditioner" HorizontalAlignment="Left" Height="50"
+            Margin="75,162,0,0" VerticalAlignment="Top" Width="262" Style="{StaticResource ButtonRedStyle}"/>
+
+        <!-- Feature Function Label and TextBox -->
+        <Label Content="Feature Function" HorizontalAlignment="Left" Height="45" Margin="388,169,0,0"
+           VerticalAlignment="Top" Width="152" Foreground="{StaticResource TextLightBrush}" FontWeight="Bold" />
+        <TextBox x:Name="FeatureFunctionTextBox" HorizontalAlignment="Left" Height="45" Margin="547,165,0,0"
+             VerticalAlignment="Top" Width="303" />
+
+        <!-- Quantity Label and TextBox -->
+        <Label Content="Quantity" HorizontalAlignment="Left" Height="45" Margin="905,169,0,0"
+           VerticalAlignment="Top" Width="108" Foreground="{StaticResource TextLightBrush}" FontWeight="Bold"/>
+        <TextBox x:Name="QuantityTextBox" HorizontalAlignment="Left" Height="45" Margin="1003,165,0,0"
+             VerticalAlignment="Top" Width="185" />
+
+        <!-- Action Buttons -->
+        <Button x:Name="CreateButton" Content="Create Air Con" HorizontalAlignment="Left" Height="50"
+            Margin="1003,294,0,0" VerticalAlignment="Top" Width="185" Style="{StaticResource ButtonRedStyle}"/>
+        <Button x:Name="UpdateButton" Content="Update Air Con" HorizontalAlignment="Left" Height="50"
+            Margin="1003,367,0,0" VerticalAlignment="Top" Width="185" Style="{StaticResource ButtonRedStyle}"/>
+        <Button x:Name="DeleteButton" Content="Delete Air Con" HorizontalAlignment="Left" Height="50"
+            Margin="1003,444,0,0" VerticalAlignment="Top" Width="185" Style="{StaticResource ButtonRedStyle}"/>
+        <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Height="50"
+            Margin="1003,540,0,0" VerticalAlignment="Top" Width="185" Style="{StaticResource ButtonYellowStyle}"/>
+
+        <!-- Data Grid -->
+        <DataGrid x:Name="AirCondDataGrid" HorizontalAlignment="Left" Height="310" Margin="40,289,0,0"
+              VerticalAlignment="Top" Width="930" AutoGenerateColumns="False" Background="{StaticResource PrimaryBackgroundBrush}"
+              Foreground="{StaticResource TextDarkBrush}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Width="40" Binding="{Binding AirConditionerId}" />
+                <DataGridTextColumn Header="Air Con Name" Width="200" Binding="{Binding AirConditionerName}" />
+                <DataGridTextColumn Header="Warranty" Width="70" Binding="{Binding Warranty}" />
+                <DataGridTextColumn Header="Sound Level" Width="100" Binding="{Binding SoundPressureLevel}" />
+                <DataGridTextColumn Header="Feature Function" Width="200" Binding="{Binding FeatureFunction}" />
+                <DataGridTextColumn Header="Quantity" Width="70" Binding="{Binding Quantity}" />
+                <DataGridTextColumn Header="Price ($)" Width="100" Binding="{Binding DollarPrice}" />
+                <DataGridTextColumn Header="Supplier ID" Width="70" Binding="{Binding SupplierId}" />
+                <DataGridTextColumn Header="Supplier Name" Width="140" Binding="{Binding SupplierCompany.SupplierName}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Footer -->
+        <Label Content="© 2024 an.phuoc" HorizontalAlignment="Left" Height="45" Margin="34,605,0,0"
+           VerticalAlignment="Top" Width="182" Foreground="{StaticResource AccentRedBrush}"/>
     </Grid>
 </Window>

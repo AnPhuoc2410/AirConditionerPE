@@ -4,6 +4,71 @@
              xmlns:local="clr-namespace:AirConditionerShop_AnPhuocDao"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush x:Key="PrimaryBackgroundBrush" Color="#0F1923" />
+        <SolidColorBrush x:Key="SecondaryBackgroundBrush" Color="#1A1E26" />
+        <SolidColorBrush x:Key="AccentRedBrush" Color="#FF4655" />
+        <SolidColorBrush x:Key="AccentYellowBrush" Color="#FFD700" />
+        <SolidColorBrush x:Key="TextLightBrush" Color="#EAEAEA" />
+        <SolidColorBrush x:Key="TextDarkBrush" Color="#0F1923" />
+
+        <Style x:Key="ButtonRedStyle" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource AccentRedBrush}" />
+            <Setter Property="Foreground" Value="{StaticResource TextLightBrush}" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="BorderBrush" Value="{StaticResource AccentRedBrush}" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="2"
+                        CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#E94560" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="ButtonYellowStyle" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource AccentYellowBrush}" />
+            <Setter Property="Foreground" Value="{StaticResource TextDarkBrush}" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="BorderBrush" Value="{StaticResource AccentYellowBrush}" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="2"
+                        CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FFD42A" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Application.Resources>
 </Application>

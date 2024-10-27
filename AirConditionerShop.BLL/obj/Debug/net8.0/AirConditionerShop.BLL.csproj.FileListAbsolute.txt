@@ -13,3 +13,4 @@ E:\DotNetCode\GIAIDEPE\PE_PRN212_SU24TrialTest_AnPhuocDao\AirConditionerShop.BLL
 E:\DotNetCode\GIAIDEPE\PE_PRN212_SU24TrialTest_AnPhuocDao\AirConditionerShop.BLL\obj\Debug\net8.0\refint\AirConditionerShop.BLL.dll
 E:\DotNetCode\GIAIDEPE\PE_PRN212_SU24TrialTest_AnPhuocDao\AirConditionerShop.BLL\obj\Debug\net8.0\AirConditionerShop.BLL.pdb
 E:\DotNetCode\GIAIDEPE\PE_PRN212_SU24TrialTest_AnPhuocDao\AirConditionerShop.BLL\obj\Debug\net8.0\ref\AirConditionerShop.BLL.dll
+E:\DotNetCode\GIAIDEPE\PE_PRN212_SU24TrialTest_AnPhuocDao\AirConditionerShop.BLL\obj\Debug\net8.0\AirConditionerShop.BLL.sourcelink.json

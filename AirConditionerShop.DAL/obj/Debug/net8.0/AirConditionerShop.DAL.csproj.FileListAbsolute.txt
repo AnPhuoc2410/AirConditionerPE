@@ -9,3 +9,7 @@ E:\DotNetCode\GIAIDEPE\PE_PRN212_SU24TrialTest_AnPhuocDao\AirConditionerShop.DAL
 E:\DotNetCode\GIAIDEPE\PE_PRN212_SU24TrialTest_AnPhuocDao\AirConditionerShop.DAL\obj\Debug\net8.0\refint\AirConditionerShop.DAL.dll
 E:\DotNetCode\GIAIDEPE\PE_PRN212_SU24TrialTest_AnPhuocDao\AirConditionerShop.DAL\obj\Debug\net8.0\AirConditionerShop.DAL.pdb
 E:\DotNetCode\GIAIDEPE\PE_PRN212_SU24TrialTest_AnPhuocDao\AirConditionerShop.DAL\obj\Debug\net8.0\ref\AirConditionerShop.DAL.dll
+E:\DotNetCode\GIAIDEPE\PE_PRN212_SU24TrialTest_AnPhuocDao\AirConditionerShop.DAL\bin\Debug\net8.0\AirConditionerShop.DAL.runtimeconfig.json
+E:\DotNetCode\GIAIDEPE\PE_PRN212_SU24TrialTest_AnPhuocDao\AirConditionerShop.DAL\obj\Debug\net8.0\AirConditionerShop.DAL.csproj.AssemblyReference.cache
+E:\DotNetCode\GIAIDEPE\PE_PRN212_SU24TrialTest_AnPhuocDao\AirConditionerShop.DAL\obj\Debug\net8.0\AirConditionerShop.DAL.sourcelink.json
+E:\DotNetCode\GIAIDEPE\PE_PRN212_SU24TrialTest_AnPhuocDao\AirConditionerShop.DAL\obj\Debug\net8.0\AirConditionerShop.DAL.genruntimeconfig.cache

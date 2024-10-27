@@ -23,5 +23,40 @@ namespace AirConditionerShop_AnPhuocDao
         {
             InitializeComponent();
         }
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            string username = EmailTextBox.Text;
+            string password = PasswordBox.Password;
+
+            bool loginSucces = CheckingLogin(username, password);
+            if (loginSucces)
+            {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("Wrong email or password");
+            }
+        }
+
+        private void QuitButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult messageResult = MessageBox.Show("Do you want to exit", "Exit!", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (messageResult == MessageBoxResult.Yes)
+            {
+                Application.Current.Shutdown();
+            }
+        }
+        private Boolean CheckingLogin(string username, string password)
+        {
+            List<String> userLogin = ["admin", "Jaden", "sheme"];
+            foreach (var name in userLogin)
+            {
+                if (name.Equals(username)) return true;
+            }
+            return false;
+        }
     }
 }

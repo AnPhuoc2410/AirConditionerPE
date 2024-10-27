@@ -5,8 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AirConditionerShop_AnPhuocDao"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" Width="800">
-    <Grid>
-        
+                Title="LoginWindow" Height="515" Width="850" Background="#0F1923" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="C:\Users\ANPHUOC\Downloads\minecraft_logo_icon_168974.ico">
+    <Grid Margin="-13,0,13,0">
+        <Rectangle HorizontalAlignment="Left" Height="354" Stroke="#1A1E26" VerticalAlignment="Top" Width="574" RadiusX="20" RadiusY="20" Margin="151,42,0,0">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#FF4655" Offset="0.0" />
+                    <GradientStop Color="#0F1923" Offset="1.0" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Label Content="Login" HorizontalAlignment="Left" Height="60" Margin="323,49,0,0" VerticalAlignment="Top" Width="230" 
+       FontWeight="Bold" FontSize="40" Foreground="#FF4655" HorizontalContentAlignment="Center"/>
+
+        <StackPanel Orientation="Horizontal" Margin="196,157,0,0" VerticalAlignment="Top">
+            <Label Content="Email" Height="45" Width="107" Foreground="#EAEAEA" VerticalAlignment="Center"/>
+        </StackPanel>
+        <TextBox x:Name="EmailTextBox" HorizontalAlignment="Left" Height="45" Margin="301,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="375" TabIndex="0" Background="#1A1E26" Foreground="#EAEAEA" BorderBrush="#FF4655"/>
+
+        <StackPanel Orientation="Horizontal" Margin="196,225,0,0" VerticalAlignment="Top">
+            <Label Content="Password" Height="45" Width="107" Foreground="#EAEAEA" VerticalAlignment="Center"/>
+        </StackPanel>
+        <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Left" Height="45" Margin="301,225,0,0" VerticalAlignment="Top" Width="375" TabIndex="1" Background="#1A1E26" Foreground="#EAEAEA" BorderBrush="#FF4655"/>
+
+        <Button x:Name="LoginButton" HorizontalAlignment="Left" Height="55" Margin="196,311,0,0" VerticalAlignment="Top" Width="230" TabIndex="2" Background="#FF4655" Foreground="#0F1923" FontWeight="Bold" Click="LoginButton_Click">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBlock Text="Login"/>
+            </StackPanel>
+        </Button>
+
+        <Button x:Name="QuitButton" HorizontalAlignment="Left" Height="55" Margin="446,311,0,0" VerticalAlignment="Top" Width="230" TabIndex="3" Background="#1A1E26" Foreground="#EAEAEA" BorderBrush="#FF4655" FontWeight="Bold" Click="QuitButton_Click">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBlock Text="Quit"/>
+            </StackPanel>
+        </Button>
+
+        <Label Content="© 2024 an.phuoc" HorizontalAlignment="Left" Height="45" Margin="351,428,0,0" VerticalAlignment="Top" Width="182" Foreground="#FF4655" HorizontalContentAlignment="Center"/>
     </Grid>
 </Window>
