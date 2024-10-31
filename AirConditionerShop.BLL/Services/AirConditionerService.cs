@@ -12,9 +12,10 @@ namespace AirConditionerShop.BLL.Services
     {
         private AirConRepository _conRepository = new();
 
-        public List<AirConditioner> GetAllAirConditioner()
-        {
-            return _conRepository.GetAll();
-        }
+        public List<AirConditioner> GetAllAirConditioner() => _conRepository.GetAll();
+        public void AddAirConditioner(AirConditioner airConditioner) => _conRepository.Create(airConditioner);
+        public void UpdateAirConditioner(AirConditioner airConditioner) => _conRepository.Update(airConditioner);
+
+        public void DeleteAirConditioner(AirConditioner airConditioner) => _conRepository.Delete(airConditioner);
     }
 }

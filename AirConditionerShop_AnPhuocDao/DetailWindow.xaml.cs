@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AirConditionerShop.BLL.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,23 @@ namespace AirConditionerShop_AnPhuocDao
     /// </summary>
     public partial class DetailWindow : Window
     {
+        AirConditionerService _airService = new();
+        SupplierService _supplierService = new();
         public DetailWindow()
         {
             InitializeComponent();
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            SupplierIdComboBox.ItemsSource = _supplierService.GetAllSupplier();
+            SupplierIdComboBox.DisplayMemberPath = "SupplierName";
+            SupplierIdComboBox.SelectedValuePath = "SupplierId";
         }
     }
 }

@@ -5,8 +5,67 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AirConditionerShop_AnPhuocDao"
         mc:Ignorable="d"
-        Title="DetailWindow" Height="450" Width="800">
+            Title="Air Conditioner Detail" Height="755" Width="1150" 
+    Background="{StaticResource PrimaryBackgroundBrush}" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="C:\Users\ANPHUOC\Downloads\minecraft_logo_icon_168974.ico" Loaded="Window_Loaded">
     <Grid>
-        
+        <Label x:Name="DetailWindowMode" Content="Create | Update Air Conditioner" 
+           HorizontalAlignment="Left" Height="80" Margin="38,20,0,0" 
+           VerticalAlignment="Top" Width="814" FontWeight="Bold" FontSize="40" 
+           FontStyle="Italic" Foreground="{StaticResource AccentRedBrush}"/>
+
+        <Rectangle HorizontalAlignment="Left" Height="565" Margin="38,128,0,0" 
+               Stroke="#000000" VerticalAlignment="Top" Width="875" 
+               Fill="{StaticResource AccentRedBrush}" RadiusX="10" RadiusY="10" />
+
+        <Label Content="Air Con ID" HorizontalAlignment="Left" Height="45" Margin="58,155,0,0" 
+           VerticalAlignment="Top" Width="107" Foreground="{StaticResource TextLightBrush}"/>
+        <TextBox x:Name="AirConditionerIdTextBox" HorizontalAlignment="Left" Height="45" 
+             Margin="223,153,0,0" VerticalAlignment="Top" Width="275" TabIndex="0"/>
+
+        <Label Content="Air Con Name" HorizontalAlignment="Left" Height="45" Margin="58,218,0,0" 
+           VerticalAlignment="Top" Width="147" Foreground="{StaticResource TextLightBrush}"/>
+        <TextBox x:Name="AirConditionerNameTextBox" HorizontalAlignment="Left" Height="45" 
+             Margin="223,216,0,0" VerticalAlignment="Top" Width="635" TabIndex="1"/>
+
+        <Label Content="Warranty" HorizontalAlignment="Left" Height="45" Margin="58,284,0,0" 
+           VerticalAlignment="Top" Width="107" Foreground="{StaticResource TextLightBrush}"/>
+        <TextBox x:Name="WarrantyTextBox" HorizontalAlignment="Left" Height="45" 
+             Margin="223,283,0,0" VerticalAlignment="Top" Width="635" TabIndex="2"/>
+
+        <Label Content="Sound Level" HorizontalAlignment="Left" Height="45" Margin="58,351,0,0" 
+           VerticalAlignment="Top" Width="128" Foreground="{StaticResource TextLightBrush}"/>
+        <TextBox x:Name="SoundPressureLevelTextBox" HorizontalAlignment="Left" Height="45" 
+             Margin="223,351,0,0" VerticalAlignment="Top" Width="635" TabIndex="3"/>
+
+        <Label Content="Feature Function" HorizontalAlignment="Left" Height="45" Margin="58,422,0,0" 
+           VerticalAlignment="Top" Width="157" Foreground="{StaticResource TextLightBrush}"/>
+        <TextBox x:Name="FeatureFunctionTextBox" HorizontalAlignment="Left" Height="105" 
+             Margin="223,421,0,0" VerticalAlignment="Top" Width="637" TabIndex="4" 
+             AcceptsReturn="True" VerticalScrollBarVisibility="Visible" 
+             VerticalContentAlignment="Top"/>
+
+        <Label Content="Quantity" HorizontalAlignment="Left" Height="45" Margin="58,550,0,0" 
+           VerticalAlignment="Top" Width="140" Foreground="{StaticResource TextLightBrush}"/>
+        <TextBox x:Name="QuantityTextBox" HorizontalAlignment="Left" Height="45" 
+             Margin="223,547,0,0" VerticalAlignment="Top" Width="227" TabIndex="5"/>
+
+        <Label Content="Price ($)" HorizontalAlignment="Left" Height="45" Margin="516,552,0,0" 
+           VerticalAlignment="Top" Width="107" Foreground="{StaticResource TextLightBrush}"/>
+        <TextBox x:Name="DollarPriceTextBox" HorizontalAlignment="Left" Height="45" 
+             Margin="615,549,0,0" VerticalAlignment="Top" Width="244" TabIndex="6"/>
+
+        <Label Content="Supplier ID" HorizontalAlignment="Left" Height="45" Margin="58,615,0,0" 
+           VerticalAlignment="Top" Width="147" Foreground="{StaticResource TextLightBrush}"/>
+        <ComboBox x:Name="SupplierIdComboBox" HorizontalAlignment="Left" Height="45" 
+               Margin="223,613,0,0" VerticalAlignment="Top" Width="290" 
+               Background="{StaticResource AccentRedBrush}" TabIndex="7" 
+               FontWeight="Bold" FontSize="18"/>
+
+        <Button x:Name="SaveButton" Content="Save Air Con" HorizontalAlignment="Left" Height="50" 
+            Margin="945,128,0,0" VerticalAlignment="Top" Width="165" 
+            Style="{StaticResource ButtonRedStyle}" TabIndex="8" Click="SaveButton_Click"/>
+        <Button x:Name="CloseButton" Content="Close" HorizontalAlignment="Left" Height="50" 
+            Margin="945,208,0,0" VerticalAlignment="Top" Width="165" 
+            Style="{StaticResource ButtonYellowStyle}" TabIndex="9"/>
     </Grid>
 </Window>
