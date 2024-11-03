@@ -66,6 +66,6 @@
             Style="{StaticResource ButtonRedStyle}" TabIndex="8" Click="SaveButton_Click"/>
         <Button x:Name="CloseButton" Content="Close" HorizontalAlignment="Left" Height="50" 
             Margin="945,208,0,0" VerticalAlignment="Top" Width="165" 
-            Style="{StaticResource ButtonYellowStyle}" TabIndex="9"/>
+            Style="{StaticResource ButtonYellowStyle}" TabIndex="9" Click="CloseButton_Click"/>
     </Grid>
 </Window>

@@ -38,6 +38,7 @@ namespace AirConditionerShop_AnPhuocDao
         {
             DetailWindow detailWindow = new DetailWindow();
             detailWindow.ShowDialog();
+            FillDataGrid();
         }
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
@@ -49,8 +50,9 @@ namespace AirConditionerShop_AnPhuocDao
                 return;
             }
             DetailWindow detailWindow = new();
+            detailWindow.DataTranfer = selected;
             detailWindow.ShowDialog();
-
+            FillDataGrid();
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
