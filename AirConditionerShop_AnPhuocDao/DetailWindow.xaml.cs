@@ -2,6 +2,7 @@
 using AirConditionerShop.DAL.Entities;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,6 +53,7 @@ namespace AirConditionerShop_AnPhuocDao
             }
             DetailWindowMode.Content = "Edit Air Conditioner";
             AirConditionerIdTextBox.IsEnabled = false;
+
             AirConditionerIdTextBox.Text = DataTranfer.AirConditionerId.ToString();
             AirConditionerNameTextBox.Text = DataTranfer.AirConditionerName;
             WarrantyTextBox.Text = DataTranfer.Warranty;
@@ -59,11 +61,12 @@ namespace AirConditionerShop_AnPhuocDao
             FeatureFunctionTextBox.Text = DataTranfer.FeatureFunction;
             QuantityTextBox.Text = DataTranfer.Quantity.ToString();
             DollarPriceTextBox.Text = DataTranfer.DollarPrice.ToString();
-            SupplierIdComboBox.SelectedValue = DataTranfer.SupplierId ;
+            SupplierIdComboBox.SelectedValue = DataTranfer.SupplierId;
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!CheckVar()) return;
             AirConditioner obj = new();
             obj.AirConditionerId = int.Parse(AirConditionerIdTextBox.Text);
             obj.AirConditionerName = AirConditionerNameTextBox.Text;
@@ -87,6 +90,36 @@ namespace AirConditionerShop_AnPhuocDao
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+        private bool CheckVar()
+        {
+            if (string.IsNullOrWhiteSpace(AirConditionerNameTextBox.Text))
+            {
+                MessageBox.Show("Air-name is required", "Field Required", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+            if (AirConditionerNameTextBox.Text.Trim().Length < 5)
+            {
+                MessageBox.Show("Air-name is must be >= 5", "Length Required", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+            TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
+            string airConsName = AirConditionerNameTextBox.Text.Trim();
+            AirConditionerNameTextBox.Text = textInfo.ToTitleCase(airConsName.ToLower());
+
+            bool convertedStatus = int.TryParse(QuantityTextBox.Text, out int quantity);
+            if (!convertedStatus)
+            {
+                MessageBox.Show("Quantity is a number", "Quantity Required", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+            if(quantity < 0 || quantity > 100)
+            {
+                MessageBox.Show("Quantity is Positive or Less than 100", "Quantity Required", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+
+            return true;
         }
     }
 }
