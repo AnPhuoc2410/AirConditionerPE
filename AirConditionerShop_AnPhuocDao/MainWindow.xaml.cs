@@ -19,6 +19,7 @@ namespace AirConditionerShop_AnPhuocDao
     public partial class MainWindow : Window
     {
         private AirConditionerService _service = new();
+        public StaffMember loginUser {  get; set; }
         public MainWindow()
         {
             InitializeComponent();
@@ -27,6 +28,12 @@ namespace AirConditionerShop_AnPhuocDao
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             FillDataGrid();
+            if(loginUser.Role == 2)
+            {
+                CreateButton.IsEnabled = false;
+                UpdateButton.IsEnabled = false;
+                DeleteButton.IsEnabled = false;
+            }
         }
         private void FillDataGrid()
         {
@@ -75,6 +82,26 @@ namespace AirConditionerShop_AnPhuocDao
         private void QuitButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            string feature = FeatureFunctionTextBox.Text.Trim();
+            int? quantity = null;
+            if (!string.IsNullOrWhiteSpace(QuantityTextBox.Text))
+            {
+                if (int.TryParse(QuantityTextBox.Text, out int value))
+                {
+                    quantity = value;
+                }
+                else
+                {
+                    MessageBox.Show("invalid quantity", "Wrong number", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+            }
+            var list = _service.SearchByFeatureQuantity(feature, quantity);
+            FillDataGrid();
         }
     }
 }

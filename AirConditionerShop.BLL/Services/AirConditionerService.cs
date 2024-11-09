@@ -17,5 +17,7 @@ namespace AirConditionerShop.BLL.Services
         public void UpdateAirConditioner(AirConditioner airConditioner) => _conRepository.Update(airConditioner);
 
         public void DeleteAirConditioner(AirConditioner airConditioner) => _conRepository.Delete(airConditioner);
+
+        public List<AirConditioner> SearchByFeatureQuantity(string feature, int? quantity) => _conRepository.SearchByFeatureOrQuantity(feature, quantity);
     }
 }

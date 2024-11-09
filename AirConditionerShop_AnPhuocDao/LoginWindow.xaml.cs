@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AirConditionerShop.BLL.Services;
+using AirConditionerShop.DAL.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,26 +21,37 @@ namespace AirConditionerShop_AnPhuocDao
     /// </summary>
     public partial class LoginWindow : Window
     {
+        private UserService _userService = new();
         public LoginWindow()
         {
             InitializeComponent();
         }
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            string username = EmailTextBox.Text;
+            string email = EmailTextBox.Text.Trim();
             string password = PasswordBox.Password;
 
-            bool loginSucces = CheckingLogin(username, password);
-            if (loginSucces)
+            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
             {
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.ShowDialog();
-                this.Close();
+                MessageBox.Show("Email and password is required", "Invalid", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
             }
-            else
+            StaffMember? account = _userService.Authenticate(email, password);
+            if (account == null)
             {
-                MessageBoxResult result = MessageBox.Show("Wrong email or password");
+                MessageBox.Show("Email or password is incorrect", "Invalid", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
             }
+            if (account.Role == 3)
+            {
+                MessageBox.Show("You do not have permission", "Can't access", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            MainWindow mainWindow = new();
+            mainWindow.loginUser = account;
+            mainWindow.Show();
+            this.Hide();
         }
 
         private void QuitButton_Click(object sender, RoutedEventArgs e)
@@ -48,15 +61,6 @@ namespace AirConditionerShop_AnPhuocDao
             {
                 Application.Current.Shutdown();
             }
-        }
-        private Boolean CheckingLogin(string username, string password)
-        {
-            List<String> userLogin = ["admin", "Jaden", "sheme"];
-            foreach (var name in userLogin)
-            {
-                if (name.Equals(username)) return true;
-            }
-            return false;
         }
     }
 }
